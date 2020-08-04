@@ -1,7 +1,7 @@
-import sys
-sys.path.append(
-    r'C:\Users\Administrator\OneDrive\myScripts\Python\maya_to_katana\MayaExportScenegraphXML'
-)
+# import sys
+# sys.path.append(
+#     r'C:\Users\Administrator\Documents\maya\scripts\MayaExportScenegraphXML'
+# )
 import XMLExportUI
 reload(XMLExportUI)
 import maya2scenegraphXML
