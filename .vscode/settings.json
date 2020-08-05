@@ -1,7 +1,0 @@
-{
-    "files.exclude": {
-        "**/__pycache__": true,
-        "**/*.pyc": true
-    },
-    "python.pythonPath": "C:\\Program Files\\Python37\\python.exe",
-}
