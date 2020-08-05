@@ -330,8 +330,10 @@ class export_window(Ui_MainWindow, QtWidgets.QMainWindow):
                                      assembly_name=ass_name,
                                      proxy_name=proxy_name, proxy_obj=proxy_obj,
                                      clean_attr=clean_attr)
+                    QtWidgets.QMessageBox.information(self, 'Export receipt',
+                                                      ('\tSuccessfully exported\n\nexport directory: ' + path_name))
             else:
-                cmds.warning('Lack of necessary conditions!')
+                cmds.error('Lack of necessary conditions!')
 
     # Options action def
     def reset_action(self):
