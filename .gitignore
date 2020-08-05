@@ -123,12 +123,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-<<<<<<< HEAD
 
 # PyCharm
-.idea
+.idea/
 
 #VSCode
-.vscode
-=======
->>>>>>> parent of fe3fb38... Update .gitignore
+.vscode/
