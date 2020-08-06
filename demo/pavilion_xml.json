@@ -1,0 +1,29 @@
+{
+    "Line_Path": "C://\\outXML",
+    "Line_arbAtt": "optional",
+    "checkBox_Ani": false,
+    "checkBox_arbAtt": false,
+    "checkBox_cleanAttr": true,
+    "checkBox_proxy": true,
+    "label_ABCOption": {
+        "checkBox_FilterEulerRotations": false,
+        "checkBox_NoNormals": false,
+        "checkBox_RenderableOnly": false,
+        "checkBox_StripNamespaces": false,
+        "checkBox_UVWrite": true,
+        "checkBox_Verbose": false,
+        "checkBox_WholeFrameGeo": false,
+        "checkBox_WorldSpace": true,
+        "checkBox_WriteColorSets": false,
+        "checkBox_WriteCreases": false,
+        "checkBox_WriteFaceSets": false,
+        "checkBox_WriteVisibility": false,
+        "checkBox_WritsUvSets": true
+    },
+    "lineEdit_Ass": "slate02, table, ",
+    "lineEdit_Com": "slate02A, slate02B, slate02C, slate02D, stool, tableA, Desk, slate01, column, Roof, pavilionB, pavilionA, ",
+    "lineEdit_RootName": "|pavilion_grp",
+    "lineEdit_proxy": "_proxy",
+    "spinBox_Ani_End": "0",
+    "spinBox_Ani_Start": "0"
+}
