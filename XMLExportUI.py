@@ -323,8 +323,18 @@ class export_window(Ui_MainWindow, QtWidgets.QMainWindow):
                 if self.checkBox_cleanAttr.isChecked():
                     clean_attr = True
 
+                if self.checkBox_fileName.isChecked():
+                    xml_name = self.lineEdit_fileName.text()
+                    if xml_name.find('.') > 0:
+                        xml_name = xml_name[:xml_name.find('.')]
+                    xml_name = xml_name + '.xml'
+                else:
+                    xml_name = root_name + '.xml'
+                    xml_name = xml_name[xml_name.rfind('|') + 1:]
+
                 if not __name__ == "__main__":
                     mesx.exportScene(maya_root=root_name, export_path=path_name,
+                                     xml_name=xml_name,
                                      component_name=com_name, geo_attr=geo_attr,
                                      start_frame=start_frame, end_frame=end_frame,
                                      assembly_name=ass_name,
@@ -350,6 +360,8 @@ class export_window(Ui_MainWindow, QtWidgets.QMainWindow):
         if save_file[0]:
             attribute = {
                 self.lineEdit_RootName.objectName(): self.lineEdit_RootName.text(),
+                self.checkBox_fileName.objectName(): self.checkBox_fileName.isChecked(),
+                self.lineEdit_fileName.objectName(): self.lineEdit_fileName.text(),
                 self.lineEdit_Ass.objectName(): self.lineEdit_Ass.text(),
                 self.lineEdit_Com.objectName(): self.lineEdit_Com.text(),
                 self.checkBox_cleanAttr.objectName(): self.checkBox_cleanAttr.isChecked(),

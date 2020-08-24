@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'main.ui',
 # licensing of 'main.ui' applies.
 #
-# Created: Tue Aug  4 11:10:20 2020
+# Created: Mon Aug 24 23:34:14 2020
 #      by: pyside2-uic  running on PySide2 5.13.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -14,8 +14,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(450, 450)
-        MainWindow.setMinimumSize(QtCore.QSize(450, 450))
+        MainWindow.resize(450, 480)
+        MainWindow.setMinimumSize(QtCore.QSize(450, 480))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -25,6 +25,7 @@ class Ui_MainWindow(object):
         self.Label_RootName = QtWidgets.QLabel(self.centralwidget)
         self.Label_RootName.setEnabled(True)
         self.Label_RootName.setMaximumSize(QtCore.QSize(154, 16777215))
+        self.Label_RootName.setAlignment(QtCore.Qt.AlignCenter)
         self.Label_RootName.setObjectName("Label_RootName")
         self.HorizLayout_RootName.addWidget(self.Label_RootName)
         self.lineEdit_RootName = QtWidgets.QLabel(self.centralwidget)
@@ -37,6 +38,21 @@ class Ui_MainWindow(object):
         self.pushButt_RootName_GetSel.setObjectName("pushButt_RootName_GetSel")
         self.HorizLayout_RootName.addWidget(self.pushButt_RootName_GetSel)
         self.verticalLayout.addLayout(self.HorizLayout_RootName)
+        self.HorizLayout_fileName = QtWidgets.QHBoxLayout()
+        self.HorizLayout_fileName.setObjectName("HorizLayout_fileName")
+        self.checkBox_fileName = QtWidgets.QCheckBox(self.centralwidget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.checkBox_fileName.setFont(font)
+        self.checkBox_fileName.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.checkBox_fileName.setObjectName("checkBox_fileName")
+        self.HorizLayout_fileName.addWidget(self.checkBox_fileName)
+        self.lineEdit_fileName = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_fileName.setEnabled(False)
+        self.lineEdit_fileName.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_fileName.setObjectName("lineEdit_fileName")
+        self.HorizLayout_fileName.addWidget(self.lineEdit_fileName)
+        self.verticalLayout.addLayout(self.HorizLayout_fileName)
         self.gridLayout_ComAss = QtWidgets.QGridLayout()
         self.gridLayout_ComAss.setObjectName("gridLayout_ComAss")
         self.pushButt_Com_List = QtWidgets.QPushButton(self.centralwidget)
@@ -350,6 +366,7 @@ class Ui_MainWindow(object):
         QtCore.QObject.connect(self.checkBox_proxy, QtCore.SIGNAL("clicked(bool)"), self.pushButt_proxy.setEnabled)
         QtCore.QObject.connect(self.checkBox_proxy, QtCore.SIGNAL("clicked(bool)"), self.label_proxy.setEnabled)
         QtCore.QObject.connect(self.checkBox_proxy, QtCore.SIGNAL("clicked(bool)"), self.lineEdit_proxy.setEnabled)
+        QtCore.QObject.connect(self.checkBox_fileName, QtCore.SIGNAL("clicked(bool)"), self.lineEdit_fileName.setEnabled)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.pushButt_RootName_GetSel, self.lineEdit_Com)
         MainWindow.setTabOrder(self.lineEdit_Com, self.pushButt_Com_List)
@@ -364,6 +381,8 @@ class Ui_MainWindow(object):
         self.Label_RootName.setText(QtWidgets.QApplication.translate("MainWindow", "File Name And Root Model", None, -1))
         self.lineEdit_RootName.setText(QtWidgets.QApplication.translate("MainWindow", "Root_Model", None, -1))
         self.pushButt_RootName_GetSel.setText(QtWidgets.QApplication.translate("MainWindow", "Get Selection", None, -1))
+        self.checkBox_fileName.setText(QtWidgets.QApplication.translate("MainWindow", "File Name", None, -1))
+        self.lineEdit_fileName.setText(QtWidgets.QApplication.translate("MainWindow", "file_name.xml", None, -1))
         self.pushButt_Com_List.setText(QtWidgets.QApplication.translate("MainWindow", "List", None, -1))
         self.pushButt_Com_DelSel.setText(QtWidgets.QApplication.translate("MainWindow", "Del", None, -1))
         self.Label_Ass.setText(QtWidgets.QApplication.translate("MainWindow", "Assembly", None, -1))

@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'list.ui',
 # licensing of 'list.ui' applies.
 #
-# Created: Tue Aug  4 11:10:20 2020
+# Created: Mon Aug 24 23:34:14 2020
 #      by: pyside2-uic  running on PySide2 5.13.2
 #
 # WARNING! All changes made in this file will be lost!

@@ -22,6 +22,12 @@ def load_file(self, file_path):
         else:
             cmds.warning('There are no Root Name parameters')
 
+        if 'checkBox_fileName' in load_data.keys():
+            self.checkBox_fileName.setChecked(load_data['checkBox_fileName'])
+            self.lineEdit_fileName.setText(load_data['lineEdit_fileName'])
+        else:
+            cmds.warning('There are no File Name parameters')
+
         if 'lineEdit_Ass' in load_data.keys():
             self.lineEdit_Ass.setText(load_data['lineEdit_Ass'])
         else:

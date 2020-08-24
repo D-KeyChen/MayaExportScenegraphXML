@@ -10,13 +10,13 @@
     <x>0</x>
     <y>0</y>
     <width>450</width>
-    <height>450</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>450</width>
-    <height>450</height>
+    <height>480</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -39,6 +39,9 @@
         </property>
         <property name="text">
          <string>File Name And Root Model</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -65,6 +68,38 @@
         </property>
         <property name="text">
          <string>Get Selection</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="HorizLayout_fileName">
+      <item>
+       <widget class="QCheckBox" name="checkBox_fileName">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="text">
+         <string>File Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_fileName">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>file_name.xml</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -930,7 +965,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>261</x>
-     <y>213</y>
+     <y>234</y>
     </hint>
    </hints>
   </connection>
@@ -946,7 +981,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>422</x>
-     <y>213</y>
+     <y>234</y>
     </hint>
    </hints>
   </connection>
@@ -962,7 +997,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>261</x>
-     <y>237</y>
+     <y>253</y>
     </hint>
    </hints>
   </connection>
@@ -978,7 +1013,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>422</x>
-     <y>237</y>
+     <y>253</y>
     </hint>
    </hints>
   </connection>
@@ -994,7 +1029,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>261</x>
-     <y>259</y>
+     <y>272</y>
     </hint>
    </hints>
   </connection>
@@ -1010,7 +1045,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>422</x>
-     <y>259</y>
+     <y>272</y>
     </hint>
    </hints>
   </connection>
@@ -1117,12 +1152,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>136</x>
-     <y>143</y>
+     <x>182</x>
+     <y>171</y>
     </hint>
     <hint type="destinationlabel">
      <x>433</x>
-     <y>146</y>
+     <y>174</y>
     </hint>
    </hints>
   </connection>
@@ -1133,12 +1168,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>100</x>
-     <y>143</y>
+     <x>182</x>
+     <y>171</y>
     </hint>
     <hint type="destinationlabel">
-     <x>221</x>
-     <y>146</y>
+     <x>246</x>
+     <y>174</y>
     </hint>
    </hints>
   </connection>
@@ -1149,12 +1184,28 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>129</x>
-     <y>143</y>
+     <x>182</x>
+     <y>171</y>
     </hint>
     <hint type="destinationlabel">
-     <x>280</x>
-     <y>144</y>
+     <x>337</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_fileName</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineEdit_fileName</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>79</y>
     </hint>
    </hints>
   </connection>

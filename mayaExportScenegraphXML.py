@@ -9,14 +9,12 @@ from maya import cmds
 
 
 # exportScene
-def exportScene(maya_root, export_path, component_name,
+def exportScene(maya_root, export_path, xml_name, component_name,
                 assembly_name=None, start_frame=None,
                 end_frame=None, user_arb=None, geo_attr='',
                 proxy_name=None, proxy_obj=None,
                 clean_attr=False):
     # geoAttr = ' '.join(geoAttr)
-    xml_name = maya_root + '.xml'
-    xml_name = xml_name[xml_name.rfind('|') + 1:]
     xml_path_name = os.path.join(export_path, xml_name)
     maya_root = [maya_root]
 
