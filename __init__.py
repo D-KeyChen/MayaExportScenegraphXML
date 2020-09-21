@@ -1,2 +1,5 @@
-# Copyright (c) 2012 The Foundry Visionmongers Ltd. All Rights Reserved.
+import sys, os
 
+path = os.path.dirname(__file__)
+if not path in sys.path:
+    sys.path.append(path)
