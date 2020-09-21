@@ -12,14 +12,13 @@
 
 3. Open Script Editor and paste the following code to Python tab:
     ```python
-    import MayaExportScenegraphXML
-    import MayaExportScenegraphXML.XMLExportUI
-    reload(MayaExportScenegraphXML.XMLExportUI)
-    import MayaExportScenegraphXML.maya2scenegraphXML
-    reload(MayaExportScenegraphXML.maya2scenegraphXML)
+    import MayaExportScenegraphXML, XMLExportUI, maya2scenegraphXML
+    reload(MayaExportScenegraphXML)
+    reload(XMLExportUI)
+    reload(maya2scenegraphXML)
     if 'exp_win' in globals():
         exp_win.close()
-    exp_win = MayaExportScenegraphXML.XMLExportUI.export_window()
+    exp_win = XMLExportUI.export_window()
     exp_win.show()
     ```
 4. To create a shelf button select the code and middle-mouse-drag it to your shelf
