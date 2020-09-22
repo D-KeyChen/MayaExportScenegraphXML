@@ -60,3 +60,4 @@ def exportScene(maya_root, export_path, xml_name, component_name,
     # (这是可选的)
     if clean_attr:
         maya2scenegraphXML.deleteSgxmlAttrs(maya_root)
+        maya2scenegraphXML.deleteSgxmlAttrs(proxy_obj)
