@@ -5,39 +5,7 @@ import shutil
 import maya2scenegraphXML
 
 reload(maya2scenegraphXML)
-from maya import cmds, mel
-
-
-def attribute_exists(att, obj):
-    return mel.eval('attributeExists %s %s' % (att, obj))
-
-
-def set_children_com(obj):
-    '''
-    Set the children of "ass" to "com"
-    将“ ass”的子级设置为“ com”
-    '''
-    child_nodes = cmds.listRelatives(obj, fullPath=True, children=True)
-    if child_nodes is not None:
-        for mayaChildPath in child_nodes:
-            maya2scenegraphXML.setComponent([mayaChildPath], refType='abc') if not attribute_exists(
-                'sgxml_nodeGroupType', mayaChildPath) else False
-            maya2scenegraphXML.deleteSgxmlAttr(mayaChildPath, 'sgxml_nodeType') if attribute_exists(
-                'sgxml_nodeGroupType', mayaChildPath) else False
-            maya2scenegraphXML.deleteSgxmlAttr(mayaChildPath, 'sgxml_refType') if attribute_exists(
-                'sgxml_nodeGroupType', mayaChildPath) else False
-
-
-def set_parent_ass(obj):
-    '''
-    Set the parent of "com" to "ass"
-    将“ com”的父级设置为“ ass”
-    '''
-    obj = cmds.listRelatives(obj, fullPath=True, parent=True)[0]
-    maya2scenegraphXML.setAssembly([obj]) if not attribute_exists('sgxml_nodeGroupType', obj) else False
-    maya2scenegraphXML.deleteSgxmlAttr(obj, 'sgxml_nodeType') if attribute_exists('sgxml_nodeType', obj) else False
-    maya2scenegraphXML.deleteSgxmlAttr(obj, 'sgxml_refType') if attribute_exists('sgxml_refType', obj) else False
-    set_children_com(obj)
+from maya import cmds
 
 
 # exportScene
@@ -55,18 +23,13 @@ def exportScene(maya_root, export_path, xml_name, component_name,
     if export_path and os.path.exists(export_path):
         shutil.rmtree(export_path)
 
-    # Mark the house node as an assembly
-    # 将house节点标记为assembly
+    # Mark the house node as an asembly
+    # 将house节点标记为asembly
     maya2scenegraphXML.setAssembly(assembly_name)
 
     # Mark the tree, ground, smoke and both parts of the house as components
     # 把树、地面、烟和房子的两个部分都标记为组件
     maya2scenegraphXML.setComponent(component_name, refType='abc')
-
-    # Component/Assembly add judgment, Priority retention of Assembly
-    # Component / Assembly 添加判断, 优先保留Assembly
-    [set_parent_ass(x) for x in component_name]
-    [set_children_com(x) for x in assembly_name]
 
     if proxy_obj and proxy_name:
         maya2scenegraphXML.setStaticComponent(proxy_obj, refType='abc')
