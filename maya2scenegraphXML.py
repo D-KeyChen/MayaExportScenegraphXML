@@ -190,6 +190,7 @@ def deleteSgxmlAttrs(mayaPath):
     deleteSgxmlAttr(mayaPath, 'sgxml_component')
     deleteSgxmlAttr(mayaPath, 'sgxml_reference')
     deleteSgxmlAttr(mayaPath, 'sgxml_nodeType')
+    deleteSgxmlAttr(mayaPath, 'sgxml_nodeGroupType')
     deleteSgxmlAttr(mayaPath, 'sgxml_filepath')
     deleteSgxmlAttr(mayaPath, 'sgxml_refType')
     deleteSgxmlAttr(mayaPath, 'sgxml_ignore')
